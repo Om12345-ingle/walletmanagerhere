@@ -1,150 +1,310 @@
-# AI Wallet Manager
+# 🤖 AI Wallet Manager — Stellar Blockchain
 
-A Next.js application that provides an AI-powered interface for managing Stellar cryptocurrency wallets with multi-asset support and token swapping using natural language commands.
+> **Rise In — Stellar Journey to Mastery | 🟢 Green Belt (Level 4) Submission**
 
-## Features
-
-- 🤖 **AI-Powered Commands**: Use natural language to interact with your Stellar wallet
-- 💼 **Multi-Asset Portfolio**: Manage XLM, USDC, EURC, AQUA, and YBX assets
-- 🔄 **Token Swapping**: Swap between different Stellar assets directly in chat
-- 💰 **Balance Checking**: View your multi-asset portfolio in real-time
-- 📤 **Send Transactions**: Send any supported asset to other Stellar addresses
-- 📊 **Transaction History**: View recent transactions and swap history
-- 🎯 **Smart Contract Security**: Advanced spending limits and wallet freeze protection
-- 🔗 **Trustline Management**: Check and manage asset trustlines
-- 🔐 **Secure**: Uses your own Stellar keys (testnet supported)
-
-## Supported Commands
-
-### Basic Wallet Commands
-- `"What's my balance?"` - Check your current balance
-- `"Send 10 XLM to GXXX..."` - Send assets to a Stellar address
-- `"Show my transaction history"` - View recent transactions
-- `"List contacts"` - View saved contacts
-
-### Multi-Asset & Swapping
-- `"Show my portfolio"` - View all your assets and their values
-- `"Swap 100 XLM to USDC"` - Swap between different assets
-- `"What's the price of USDC?"` - Check current asset prices
-- `"Check trustlines"` - View your asset trustlines
-- `"Calculate swap 50 XLM to EURC"` - Estimate swap outputs
-- `"Swap history"` - View your trading history
-
-### Smart Contract Security
-- `"Set daily limit to 500 XLM"` - Set spending limits
-- `"Freeze my wallet"` - Emergency wallet freeze
-- `"Status"` - Check wallet and security status
-- `"Save contract Alice GXXX"` - Save contacts to blockchain
-
-## Tech Stack
-
-- **Frontend**: Next.js 14, React 18, TypeScript
-- **Styling**: Tailwind CSS
-- **Blockchain**: Stellar SDK, Soroban Smart Contracts
-- **AI**: Google Gemini AI (with fallback parser)
-- **Network**: Stellar Testnet
-- **Assets**: XLM, USDC, EURC, AQUA, YBX
-
-## Prerequisites
-
-- Node.js 18+ 
-- npm or yarn
-- Stellar testnet account (keys)
-- Google Gemini API key (optional - has fallback)
-
-## Installation
-
-1. Clone the repository:
-```bash
-git clone <repository-url>
-cd ai-wallet-manager
-```
-
-2. Install dependencies:
-```bash
-npm install
-```
-
-3. Create environment file:
-```bash
-cp .env.example .env.local
-```
-
-4. Configure your environment variables in `.env.local`:
-```env
-# Gemini AI API Key (optional - has fallback parser)
-GEMINI_API_KEY=your_gemini_api_key
-
-# Stellar Keys (testnet)
-STELLAR_PUBLIC_KEY=your_stellar_public_key
-STELLAR_SECRET_KEY=your_stellar_secret_key
-```
-
-5. Run the development server:
-```bash
-npm run dev
-```
-
-6. Open [http://localhost:3000](http://localhost:3000) in your browser.
-
-## Usage
-
-1. **Connect Wallet**: Enter your Stellar public and secret keys
-2. **Fund Account**: Use the "Fund Testnet" button to get test XLM
-3. **Chat Interface**: Use natural language commands to manage your wallet
-4. **View History**: Monitor your transactions in real-time
-
-## API Endpoints
-
-- `GET /api/stellar/balance` - Get account balance
-- `POST /api/stellar/send` - Send XLM transaction
-- `POST /api/stellar/history` - Get transaction history
-- `POST /api/stellar/fund-testnet` - Fund testnet account
-- `POST /api/stellar/create-account` - Create new Stellar account
-- `POST /api/ai-parse` - Parse natural language commands
-
-## Development
-
-```bash
-# Run development server
-npm run dev
-
-# Build for production
-npm run build
-
-# Start production server
-npm start
-
-# Run linting
-npm run lint
-```
-
-## Security Notes
-
-- This application is designed for **testnet use only**
-- Never commit your `.env.local` file with real credentials
-- For production use, implement proper key management
-- Always verify transactions before confirming
-
-## Contributing
-
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Add tests if applicable
-5. Submit a pull request
-
-## License
-
-MIT License - see LICENSE file for details
-
-## Support
-
-For issues and questions:
-- Create an issue on GitHub
-- Check the Stellar documentation: https://developers.stellar.org/
-- Gemini AI documentation: https://ai.google.dev/
+An AI-powered wallet management application built on the **Stellar blockchain**, enabling users to manage multi-asset portfolios, execute token swaps, set smart contract spending limits, and interact with their wallet using natural language commands.
 
 ---
 
-Built with ❤️ using Next.js and Stellar
+## 🌐 Live Demo
+
+**[https://omyaingle-7vqkryq5i-neelpote96-9476s-projects.vercel.app](https://omyaingle-7vqkryq5i-neelpote96-9476s-projects.vercel.app)**
+
+---
+
+## 📋 Table of Contents
+
+- [Overview](#overview)
+- [Level 4 Requirements Met](#level-4-requirements-met)
+- [Features](#features)
+- [Tech Stack](#tech-stack)
+- [Architecture](#architecture)
+- [Smart Contracts](#smart-contracts)
+- [CI/CD Pipeline](#cicd-pipeline)
+- [Getting Started](#getting-started)
+- [Environment Variables](#environment-variables)
+- [API Reference](#api-reference)
+- [Screenshots](#screenshots)
+- [Roadmap](#roadmap)
+
+---
+
+## Overview
+
+AI Wallet Manager is a production-ready dApp on the **Stellar Testnet** that combines natural language AI with blockchain wallet operations. Users connect their Stellar wallet (manually or via Freighter), then interact through a chat interface to check balances, send assets, swap tokens, and manage security — all without needing to understand blockchain mechanics.
+
+---
+
+## ✅ Level 4 Requirements Met
+
+| Requirement | Status | Details |
+|---|---|---|
+| Advanced smart contracts | ✅ | Soroban-ready spending limits, wallet freeze, contact management |
+| Production-ready app | ✅ | Deployed on Vercel with CI/CD pipeline |
+| Multi-asset support | ✅ | XLM, USDC, EURC, AQUA, YBX |
+| Token swapping | ✅ | Path payment via Stellar DEX |
+| Trustline management | ✅ | Auto-detect and create trustlines |
+| Real on-chain transactions | ✅ | Live on Stellar Testnet |
+| CI/CD pipeline | ✅ | GitHub Actions → Vercel auto-deploy |
+| Clean architecture | ✅ | Next.js App Router, typed APIs, context state |
+| README documentation | ✅ | This document |
+
+---
+
+## ✨ Features
+
+### 🤖 AI-Powered Chat Interface
+- Natural language command parsing — no blockchain knowledge needed
+- Commands like `"swap 50 XLM to USDC"`, `"what's my balance?"`, `"freeze my wallet"`
+- Confirmation flow for destructive actions (send, swap, freeze)
+
+### 💼 Multi-Asset Portfolio
+- Real-time balances for XLM, USDC, EURC, AQUA, YBX
+- Portfolio value in XLM and USD equivalent
+- Live price data per asset
+
+### 🔄 Token Swapping
+- Swap between any supported Stellar assets
+- Path payment strict send via Stellar DEX
+- Automatic trustline creation for new assets
+- Swap history tracking
+
+### 🔒 Smart Contract Security
+- Daily and monthly spending limits
+- Emergency wallet freeze / unfreeze
+- Contact management (local + on-chain)
+- Spending analytics
+
+### 🔗 Wallet Connection
+- Manual key entry (public + secret key)
+- Freighter browser extension support
+- Testnet Friendbot funding built-in
+
+---
+
+## 🛠 Tech Stack
+
+| Layer | Technology |
+|---|---|
+| Frontend | Next.js 14, React 18, TypeScript |
+| Styling | Tailwind CSS |
+| Blockchain | Stellar SDK, Soroban Smart Contracts |
+| AI Parsing | Google Gemini AI + rule-based fallback |
+| Wallet | Freighter API (`@stellar/freighter-api`) |
+| Network | Stellar Testnet (Horizon + Soroban RPC) |
+| Deployment | Vercel |
+| CI/CD | GitHub Actions |
+
+---
+
+## 🏗 Architecture
+
+```
+┌─────────────────────────────────────────────┐
+│                  Next.js App                │
+│                                             │
+│  ┌──────────────┐    ┌───────────────────┐  │
+│  │  Chat UI     │    │  Portfolio / Swap │  │
+│  │  (AI Parse)  │    │  Dashboard        │  │
+│  └──────┬───────┘    └────────┬──────────┘  │
+│         │                    │              │
+│  ┌──────▼────────────────────▼──────────┐   │
+│  │           App Context (State)        │   │
+│  └──────────────────┬───────────────────┘   │
+│                     │                       │
+│  ┌──────────────────▼───────────────────┐   │
+│  │           API Routes                 │   │
+│  │  /api/ai-parse                       │   │
+│  │  /api/stellar/balance                │   │
+│  │  /api/stellar/send                   │   │
+│  │  /api/stellar/multi-asset            │   │
+│  │  /api/stellar/smart-limit            │   │
+│  │  /api/stellar/fund-testnet           │   │
+│  └──────────────────┬───────────────────┘   │
+└─────────────────────┼───────────────────────┘
+                      │
+          ┌───────────▼────────────┐
+          │   Stellar Testnet      │
+          │   Horizon API          │
+          │   Soroban RPC          │
+          └────────────────────────┘
+```
+
+---
+
+## 📜 Smart Contracts
+
+The app integrates with Soroban smart contracts for:
+
+- **Spending Limits** — enforce daily/monthly XLM caps on-chain
+- **Wallet Freeze** — emergency lock that blocks all outgoing transactions
+- **Contact Registry** — store trusted addresses on-chain
+- **Spending Analytics** — track transaction patterns
+
+Contract deployment scripts are in `/contracts` and `/deploy-contract.sh`.
+
+> For testnet, the app runs in simulation mode when no contract ID is configured. Set `NEXT_PUBLIC_CONTRACT_ID` to connect to a deployed contract.
+
+---
+
+## 🔄 CI/CD Pipeline
+
+Every push to `main` triggers the GitHub Actions pipeline:
+
+```
+Push to main
+     │
+     ▼
+┌─────────────────────┐
+│  1. Checkout code   │
+│  2. Install deps    │
+│  3. TypeScript check│
+│  4. ESLint          │
+│  5. Production build│
+└──────────┬──────────┘
+           │ (on success)
+           ▼
+┌─────────────────────┐
+│  Deploy to Vercel   │
+│  (Production)       │
+└─────────────────────┘
+```
+
+Pipeline config: [`.github/workflows/ci.yml`](.github/workflows/ci.yml)
+
+**Required GitHub Secrets:**
+- `VERCEL_TOKEN` — Vercel deploy token
+- `STELLAR_PUBLIC_KEY` — Testnet public key
+- `STELLAR_SECRET_KEY` — Testnet secret key
+- `GEMINI_API_KEY` — Google Gemini API key (optional)
+- `NEXT_PUBLIC_CONTRACT_ID` — Soroban contract ID (optional)
+
+---
+
+## 🚀 Getting Started
+
+### Prerequisites
+- Node.js 18+
+- npm
+- A Stellar testnet account ([generate one here](https://laboratory.stellar.org/#account-creator?network=test))
+
+### Installation
+
+```bash
+# Clone the repo
+git clone https://github.com/Om12345-ingle/walletmanagerhere.git
+cd walletmanagerhere
+
+# Install dependencies
+npm install
+
+# Copy env file
+cp .env.example .env.local
+
+# Add your keys to .env.local
+# Then start the dev server
+npm run dev
+```
+
+Open [http://localhost:3000](http://localhost:3000)
+
+### Fund Your Testnet Account
+
+Click the **"Fund Testnet"** button in the app, or run:
+
+```bash
+curl "https://friendbot.stellar.org?addr=YOUR_PUBLIC_KEY"
+```
+
+---
+
+## 🔑 Environment Variables
+
+```env
+# Required
+STELLAR_PUBLIC_KEY=G...          # Your Stellar testnet public key
+STELLAR_SECRET_KEY=S...          # Your Stellar testnet secret key
+
+# Optional — app works without these
+GEMINI_API_KEY=...               # Google Gemini AI (for enhanced NLP)
+NEXT_PUBLIC_CONTRACT_ID=C...     # Deployed Soroban contract ID
+SOROBAN_CONTRACT_ID=C...         # Same contract ID (server-side)
+```
+
+---
+
+## 📡 API Reference
+
+| Endpoint | Method | Description |
+|---|---|---|
+| `/api/ai-parse` | POST | Parse natural language wallet commands |
+| `/api/stellar/balance` | POST | Get XLM balance for a public key |
+| `/api/stellar/send` | POST | Send XLM or assets to an address |
+| `/api/stellar/history` | POST | Get recent transaction history |
+| `/api/stellar/multi-asset` | POST | Portfolio, swap, prices, trustlines |
+| `/api/stellar/smart-limit` | POST | Spending limits, freeze, contacts |
+| `/api/stellar/fund-testnet` | POST | Fund account via Friendbot |
+| `/api/stellar/generate-keys` | POST | Generate a new Stellar keypair |
+| `/api/stellar/create-transaction` | POST | Build unsigned transaction XDR |
+
+---
+
+## 💬 Supported Chat Commands
+
+```
+Balance & Portfolio
+  "What's my balance?"
+  "Show my portfolio"
+  "What are current prices?"
+
+Sending
+  "Send 10 XLM to G..."
+  "Send 5 XLM to Alice"
+
+Swapping
+  "Swap 100 XLM to USDC"
+  "Calculate swap 50 XLM to EURC"
+  "Show swap history"
+
+Security
+  "Freeze my wallet"
+  "Unfreeze my wallet"
+  "Set daily limit to 500 XLM"
+  "Check spending limits"
+
+Contacts
+  "Save G... as Alice"
+  "List contacts"
+
+General
+  "Help"
+  "Transaction history"
+  "Check trustlines"
+```
+
+---
+
+## 🗺 Roadmap
+
+- [x] Level 1 — Wallet creation + on-chain transactions
+- [x] Level 2 — Multi-wallet flows + smart contract integration
+- [x] Level 3 — Complete mini dApp with swap and portfolio
+- [x] Level 4 — Advanced smart contracts + production deployment + CI/CD
+- [ ] Level 5 — Ship MVP + onboard first 5 real users
+- [ ] Level 6 — Scale to 20 users + Demo Day
+
+---
+
+## 📄 License
+
+MIT — see [LICENSE](LICENSE)
+
+---
+
+## 🙏 Built With
+
+- [Stellar](https://stellar.org) — Blockchain network
+- [Rise In](https://risein.com) — Stellar Journey to Mastery program
+- [Next.js](https://nextjs.org) — React framework
+- [Vercel](https://vercel.com) — Deployment platform
+- [Google Gemini](https://ai.google.dev) — AI language model
